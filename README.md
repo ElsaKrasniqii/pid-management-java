@@ -8,3 +8,29 @@ Sistemi siguron që:
  -  Alokimi dhe lirimi efikas i PID-ve: Një proces merr një PID unik kur krijohet dhe e liron atë kur përfundon ekzekutimin.
  -  Rikthimi i PID-ve: Kur një PID lirohet, ai mund të alokohet përsëri për një proces tjetër.
  -  Kufizimi i rangut: Sistemi mbështet PID-të brenda një rangu të caktuar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Përfundim:
+Ky projekt është një aplikacion i thjeshtë për kodimin dhe dekodimin e teksteve dhe përmbajtjes nga skedarët duke përdorur algoritmin Base64. Ai ofron një ndërfaqe të thjeshtë dhe mund të përdoret për të kuptuar si funksionon ky algoritëm i kodimit dhe si mund të implementohet në Java.
