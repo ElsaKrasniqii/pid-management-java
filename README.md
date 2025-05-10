@@ -32,5 +32,5 @@ Sistemi siguron që:
 
 
 
-## Përfundim:
+### Përfundim:
 Ky projekt është një aplikacion i thjeshtë për kodimin dhe dekodimin e teksteve dhe përmbajtjes nga skedarët duke përdorur algoritmin Base64. Ai ofron një ndërfaqe të thjeshtë dhe mund të përdoret për të kuptuar si funksionon ky algoritëm i kodimit dhe si mund të implementohet në Java.
