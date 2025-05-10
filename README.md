@@ -5,7 +5,7 @@ Projekti Menaxhimi i PID-ve simuleron një sistem që menaxhon Identifikuesit e 
 Objektivi i projektit Menaxhimi i PID-ve është alokimi dhe lirimi i identifikuesve të proceseve (PID-ve) brenda një rrezeje të caktuar.
 
 Sistemi siguron që:
-PID-të janë unikë: Asnjë dy procese aktive nuk mund të kenë të njëjtin PID.
-Alokimi dhe lirimi efikas i PID-ve: Një proces merr një PID unik kur krijohet dhe e liron atë kur përfundon ekzekutimin.
-Rikthimi i PID-ve: Kur një PID lirohet, ai mund të alokohet përsëri për një proces tjetër.
-Kufizimi i rangut: Sistemi mbështet PID-të brenda një rrezeje të caktuar.
+1. PID-të janë unikë: Asnjë dy procese aktive nuk mund të kenë të njëjtin PID.
+2. Alokimi dhe lirimi efikas i PID-ve: Një proces merr një PID unik kur krijohet dhe e liron atë kur përfundon ekzekutimin.
+3. Rikthimi i PID-ve: Kur një PID lirohet, ai mund të alokohet përsëri për një proces tjetër.
+4. Kufizimi i rangut: Sistemi mbështet PID-të brenda një rrezeje të caktuar.
