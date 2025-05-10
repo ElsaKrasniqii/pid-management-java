@@ -6,6 +6,11 @@ public class Pid_Management{
     private static final int MAX_PID = 5000;
     private static BitSet pidMap;
 
+    public static int allocateMap() {
+        pidMap = new BitSet(MAX_PID - MIN_PID + 1);
+        return pidMap != null ? 1 : -1;
+    }
+
     public static boolean isAllocated(int pid) {
         if (pid < MIN_PID || pid > MAX_PID) {
             throw new IllegalArgumentException("PID jashtë rangut të lejuar: " + pid);
