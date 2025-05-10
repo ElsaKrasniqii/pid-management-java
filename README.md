@@ -10,6 +10,15 @@ Sistemi siguron që:
  -  Kufizimi i rangut: Sistemi mbështet PID-të brenda një rangu të caktuar.
 
 
+## Struktura e të Dhënave:
+- Struktura e të dhënave e përdorur për menaxhimin e PID-ve është BitSet, e cila është një mënyrë kompakte për të përfaqësuar një 
+numër të madh flamujsh boolean (në këtë rast, disponueshmërinë e PID-ve). Çdo bit në BitSet përputhet me një PID dhe indeksi i bitit 
+është pozita relative e PID-së në rang.
+- Sistemi përdor konstantet e mëposhtme:
+  MIN_PID = 300
+  MAX_PID = 5000
+- Pra, BitSet do të ndjekë disponueshmërinë e 4701 PID-ve (nga 300 deri në 5000 përfshirë).
+
 
 
 
