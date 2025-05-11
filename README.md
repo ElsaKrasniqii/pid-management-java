@@ -9,6 +9,23 @@ Sistemi siguron që:
  -  Rikthimi i PID-ve: Kur një PID lirohet, ai mund të alokohet përsëri për një proces tjetër.
  -  Kufizimi i rangut: Sistemi mbështet PID-të brenda një rangu të caktuar.
 
+### Qasja:
+Menaxheri i PID-ve është implementuar duke përdorur një BitSet, një strukturë të dhënash që kursen hapësirën dhe lejon menaxhimin e disponueshmërisë së PID-ve. Në këtë sistem:
+
+PID-të e disponueshme janë të përfaqësuara me 0 në BitSet (duke treguar që janë të lira).
+
+PID-të e alokuara janë të përfaqësuara me 1 në BitSet (duke treguar që janë në përdorim).
+
+Një PID mund të alokohet duke gjetur bitin e parë të disponueshëm "0" dhe duke e vendosur atë në "1". Po ashtu, kur një PID lirohet, biti përkatës kthehet në "0".
+
+Sistemi operon brenda kufizimeve:
+
+PID Minimal: 300
+
+PID Maksimal: 5000
+
+Kjo do të thotë se PID-të e alokuara do të bien gjithmonë brenda kësaj rrezeje dhe çdo përpjekje për të alokuar ose lëshuar një PID jashtë këtij kufiri do të rezultojë në një gabim.
+
 ### Përshkrimi i Problemit
 Sistemet operative kërkojnë një mënyrë efikase për të alokuar dhe liruar PID-të për proceset. Sfida që paraqitet është sigurimi i kushteve të mëposhtme:
 - **PID unik**  
