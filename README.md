@@ -28,7 +28,11 @@ numër të madh flamujsh boolean (në këtë rast, disponueshmërinë e PID-ve).
   MAX_PID = 5000
 - Pra, BitSet do të ndjekë disponueshmërinë e 4701 PID-ve (nga 300 deri në 5000 përfshirë).
 
-
+### Funksionet Kryesore:
+allocateMap(): Inicializon strukturën e menaxhimit të PID-ve (BitSet) dhe vendos kufirin për PID-të. Kthen 1 nëse është e suksesshme dhe -1 nëse ka dështuar.
+allocatePid(): Alokon një PID të lirë. Nëse nuk ka PID të lirë, kthen -1. Nëse një PID alokohet me sukses, kthen vlerën e PID-së.
+releasePid(int pid): Liron një PID të alokuar më parë. Nëse PID-ja është brenda kufirit të vlefshëm, vlera përkatëse e BitSet reset-het për të treguar që është e lirë. Nëse PID-ja është jashtë kufirit ose e pavlefshme, ajo hedh një përjashtim.
+isAllocated(int pid): Kontrollon nëse një PID është aktualisht i alokuar. Kthen true nëse është alokuar, dhe false nëse është i lirë.
 
 
 
