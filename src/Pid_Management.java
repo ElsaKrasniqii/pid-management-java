@@ -11,6 +11,13 @@ public class Pid_Management{
         return pidMap != null ? 1 : -1;
     }
 
+    public static void releasePid(int pid) {
+        if (pid < MIN_PID || pid > MAX_PID) {
+            throw new IllegalArgumentException("PID jashtë rangut të lejuar: " + pid);
+        }
+        pidMap.clear(pid - MIN_PID);
+    }
+    
     public static boolean isAllocated(int pid) {
         if (pid < MIN_PID || pid > MAX_PID) {
             throw new IllegalArgumentException("PID jashtë rangut të lejuar: " + pid);
