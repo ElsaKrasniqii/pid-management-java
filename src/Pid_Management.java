@@ -11,6 +11,17 @@ public class Pid_Management{
         return pidMap != null ? 1 : -1;
     }
 
+
+    public static int allocatePid() {
+        int pidIndex = pidMap.nextClearBit(0);
+        if (pidIndex >= (MAX_PID - MIN_PID + 1)) {
+            return -1; // Të gjithë PID-të janë në përdorim
+        }
+        pidMap.set(pidIndex);
+        return pidIndex + MIN_PID;
+    }
+
+
     public static void releasePid(int pid) {
         if (pid < MIN_PID || pid > MAX_PID) {
             throw new IllegalArgumentException("PID jashtë rangut të lejuar: " + pid);
