@@ -9,7 +9,7 @@ Sistemi siguron që:
  -  Rikthimi i PID-ve: Kur një PID lirohet, ai mund të alokohet përsëri për një proces tjetër.
  -  Kufizimi i rangut: Sistemi mbështet PID-të brenda një rangu të caktuar.
 
-## Përshkrimi i Problemit
+### Përshkrimi i Problemit
 Sistemet operative kërkojnë një mënyrë efikase për të alokuar dhe liruar PID-të për proceset. Sfida që paraqitet është sigurimi i kushteve të mëposhtme:
 - **PID unik**  
   Çdo proces duhet të ketë një identifikues (PID) unik.
@@ -19,7 +19,7 @@ Sistemet operative kërkojnë një mënyrë efikase për të alokuar dhe liruar 
   Sistemi duhet të menaxhojë në mënyrë të optimizuar PID-të e alokuara dhe të lira, duke shmangur përdorimin e panevojshëm të burimeve të memories.
 
 
-## Struktura e të Dhënave:
+### Struktura e të Dhënave:
 - Struktura e të dhënave e përdorur për menaxhimin e PID-ve është BitSet, e cila është një mënyrë kompakte për të përfaqësuar një 
 numër të madh flamujsh boolean (në këtë rast, disponueshmërinë e PID-ve). Çdo bit në BitSet përputhet me një PID dhe indeksi i bitit 
 është pozita relative e PID-së në rang.
