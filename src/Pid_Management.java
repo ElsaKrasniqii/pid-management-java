@@ -36,19 +36,59 @@ public class Pid_Management{
         return pidMap.get(pid - MIN_PID);
     }
     public static void main(String[] args) {
-        allocateMap();
+        Scanner scanner = new Scanner(System.in);
+        allocateMap();  // Inicializimi i hartës për PID-të
 
-        int pid1 = allocatePid();
-        System.out.println("PID i alokuar: " + pid1);
+        while (true) {
+            System.out.println("\nZgjidhni një operacion:");
+            System.out.println("1. Aloko një PID");
+            System.out.println("2. Liro një PID");
+            System.out.println("3. Kontrollo statusin e një PID");
+            System.out.println("4. Dalja");
+            System.out.print("Shkruaj opsionin (1-4): ");
+            int option = scanner.nextInt();
 
-        int pid2 = allocatePid();
-        System.out.println("PID i dytë i alokuar: " + pid2);
+            switch (option) {
+                case 1:
+                    int allocatedPid = allocatePid();
+                    if (allocatedPid == -1) {
+                        System.out.println("Gabim: Të gjithë PID-të janë të përdorur.");
+                    } else {
+                        System.out.println("PID i alokuar: " + allocatedPid);
+                    }
+                    break;
 
-        releasePid(pid1);
-        System.out.println("PID i liruar: " + pid1);
+                case 2:
+                    System.out.print("Shkruaj PID-në që dëshiron të lësh: ");
+                    int pidToRelease = scanner.nextInt();
+                    try {
+                        releasePid(pidToRelease);
+                        System.out.println("PID " + pidToRelease + " është liruar.");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Gabim: " + e.getMessage());
+                    }
+                    break;
 
-        int pid3 = allocatePid(); 
-        System.out.println("PID i tretë i alokuar: " + pid3);
+                case 3:
+                    System.out.print("Shkruaj PID-në për të kontrolluar statusin: ");
+                    int pidToCheck = scanner.nextInt();
+                    if (isAllocated(pidToCheck)) {
+                        System.out.println("PID " + pidToCheck + " është i alokuar.");
+                    } else {
+                        System.out.println("PID " + pidToCheck + " është i lirë.");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Duke dalë nga aplikacioni...");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Opsion i pasaktë. Shkruaj një numër nga 1 në 4.");
+            }
+        }
     }
+
 
 }
