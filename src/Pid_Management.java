@@ -35,6 +35,20 @@ public class Pid_Management{
         }
         return pidMap.get(pid - MIN_PID);
     }
+    public static void main(String[] args) {
+        allocateMap();
 
+        int pid1 = allocatePid();
+        System.out.println("PID i alokuar: " + pid1);
+
+        int pid2 = allocatePid();
+        System.out.println("PID i dytë i alokuar: " + pid2);
+
+        releasePid(pid1);
+        System.out.println("PID i liruar: " + pid1);
+
+        int pid3 = allocatePid(); 
+        System.out.println("PID i tretë i alokuar: " + pid3);
+    }
 
 }
