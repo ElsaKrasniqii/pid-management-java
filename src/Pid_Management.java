@@ -15,7 +15,7 @@ public class Pid_Management{
     public static int allocatePid() {
         int pidIndex = pidMap.nextClearBit(0);
         if (pidIndex >= (MAX_PID - MIN_PID + 1)) {
-            return -1; // Të gjithë PID-të janë në përdorim
+            return -1; 
         }
         pidMap.set(pidIndex);
         return pidIndex + MIN_PID;
@@ -37,7 +37,7 @@ public class Pid_Management{
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        allocateMap();  // Inicializimi i hartës për PID-të
+        allocateMap();  
 
         while (true) {
             System.out.println("\nZgjidhni një operacion:");
